@@ -1,0 +1,8 @@
+.footer .list-inline a{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer{
+    background: var(--secondary-color) !important;
+}

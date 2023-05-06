@@ -1,0 +1,12 @@
+.layout{
+    display: flex;
+}
+
+.layout_main_content{
+    width: 100%;
+}
+
+main{
+    min-height: calc(100vh - 200px);
+    padding: 10px;
+}

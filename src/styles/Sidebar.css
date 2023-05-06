@@ -1,0 +1,134 @@
+.sidebar {
+  background: linear-gradient(
+      hsla(215, 14%, 24%, 0.95),
+      hsla(215, 14%, 24%, 0.7)
+    ),
+    url("../assets/images/big-apple-1056753.jpg");
+  background-size: cover;
+  transition: all 0.3s ease;
+  width: 30%;
+  max-width: 260px !important;
+  overflow-x: hidden;
+}
+
+.sidebar_accordion {
+  border: 3px solid transparent;
+}
+
+.sidebar_accordion_item, .sidebar_accordion_header {
+  background: transparent !important;
+  outline: none !important;
+  color: none !important;
+  border: none !important;
+  margin-bottom: 1rem;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-button  {
+  background: white !important;
+  color: var(--secondary-color) !important;
+}
+
+.accordion-button  > svg{
+   margin-left: 20px;
+   font-size: 1.5rem;
+   color: var(--primary-color);
+}
+
+.accordion-button:not(.collapsed)::after{
+    background-image: var( --orange-chevron-up) !important;
+}
+
+.accordion-button::after{
+    background-image: var( --orange-chevron-up) !important;
+}
+
+.sidebar_accordion_body{
+    padding-inline: 0 !important;
+}
+
+.sidebar_link_box{
+    background: var(--secondary-color);
+}
+.sidebar_link_box:hover{
+    background: gray;
+}
+
+.sidebar_link_box a{
+    padding: 10px 15px;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sidebar_link_box a:hover{
+    color: white;
+}
+
+.nav-profile{
+    padding: 10px;
+    background: var(--secondary-color);
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-profile-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+a.nav-link{
+    display: flex;
+    gap: 20px;
+}
+
+.font-weight-bold{
+    display: block;
+}
+
+.text-primary-color{
+    color: var(--primary-color);
+}
+
+.sidebar_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.sidebar_logo img{
+    width: 100px;
+}
+
+.dashboard_link_box{
+    padding: 3px;
+}
+
+.sidebar hr{
+    border-bottom: 3px solid var(--primary-color);
+    color: transparent;
+}
+
+.dashboard_link_box .sidebar_link{
+    padding: 16px 20px;
+    display: block;
+    background: white;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.dashboard_link_box .sidebar_link  > svg{
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+ }

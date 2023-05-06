@@ -1,10 +1,25 @@
+*{
+  --primary-color:#ff9900;
+  --secondary-color:#343b45;
+  --fade-white:rgba(243, 243, 243, 0.6);
+  --orange-chevron-up: url('./assets/svg/chevron-up.svg')
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+img{
+  width: 100%;
 }
 
 code {
