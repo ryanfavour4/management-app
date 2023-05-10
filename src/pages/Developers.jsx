@@ -7,14 +7,12 @@ const Developers = () => {
     const dispatch = useDispatch();
     const { developers } = useSelector(store => store.developers);
 
-    const [filteredArray, setFilteredArray] = useState(developers);
 
     // ? PAGINATION
     const [currentPage, setCurrentPage] = useState(1);
-    const [rowsPerPage] = useState(10);
-    const lastRowsIndex = currentPage * rowsPerPage;
-    const firstRowsIndex = lastRowsIndex - rowsPerPage;
-    const currentPackageInView = filteredArray.slice(firstRowsIndex, lastRowsIndex);
+    const lastRowsIndex = currentPage * 10;
+    const firstRowsIndex = lastRowsIndex - 10;
+    const currentPackageInView = developers.slice(firstRowsIndex, lastRowsIndex);
 
     return <div>
         <h1>Developers</h1>
@@ -25,13 +23,13 @@ const Developers = () => {
                     <h5>{devs.company}</h5>
                     <p>{devs.email}</p>
                     <p>{devs.gender}</p>
-                    <p onClick={dispatch(removeDeveloper(devs.id))}>delete</p>
+                    <p onClick={() => dispatch(removeDeveloper(devs.id))}>delete</p>
                 </div>
             )
         })}
         <Pagination
-            rowsPerPage={rowsPerPage}
-            totalPostLength={filteredArray.length}
+            rowsPerPage={10}
+            totalPostLength={developers.length}
             setCurrentPage={setCurrentPage}
             currentPage={currentPage} />
     </div>;
