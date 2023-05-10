@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdManageAccounts } from "react-icons/md";
 import { FcApproval } from "react-icons/fc";
@@ -9,7 +9,12 @@ import userImg from "../assets/images/femaleUser.jpg";
 import logo from "../assets/svg/amazon-pay-svgrepo-com.svg";
 import Accordion from "react-bootstrap/Accordion";
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    if (user?.email === "ryanfave022@gmail.com") setIsAdmin(true);
+    return;
+  }, [user]);
   return (
     <nav className="sidebar min-vh-100">
       <div className="sidebar_logo">
@@ -42,13 +47,13 @@ const Sidebar = () => {
             Management <MdManageAccounts />
           </Accordion.Header>
           <Accordion.Body className="sidebar_accordion_body">
-            {/* //TODO : USER SHOULDNT SEE ADMINS LINK WHILE LOGGED IN AS USER*/}
-            <div className="sidebar_link_box">
-              <Link className="sidebar_link" to="/admin">
-                Admin
-              </Link>
-            </div>
-            {/* //TODO : USER SHOULDNT SEE ADMINS LINK WHILE LOGGED IN AS USER*/}
+            {isAdmin ? (
+              <div className="sidebar_link_box">
+                <Link className="sidebar_link" to="/admin">
+                  Admin
+                </Link>
+              </div>
+            ) : null}
             <div className="sidebar_link_box">
               <Link className="sidebar_link" to="/users">
                 User
@@ -63,13 +68,13 @@ const Sidebar = () => {
           </Accordion.Header>
           <Accordion.Body className="sidebar_accordion_body">
             <div className="sidebar_link_box">
-              <Link className="sidebar_link" to="/admin">
-                Frontend
+              <Link className="sidebar_link" to="/developers">
+                Developers
               </Link>
             </div>
             <div className="sidebar_link_box">
               <Link className="sidebar_link" to="/user">
-                Backend
+                Testers
               </Link>
             </div>
           </Accordion.Body>

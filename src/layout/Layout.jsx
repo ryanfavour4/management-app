@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     <ToastContainer />
       {isLoading && <Loading />}
       <div className="layout">
-        <Sidebar />
+        <Sidebar user={userValue.user} />
         <div className="layout_main_content">
           <Topbar user={userValue.user} />
           <main>{children}</main>

@@ -3,7 +3,8 @@ const USERS_API = process.env.REACT_APP_USERS_API;
 
 // ? FETCH USERS
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
-  return fetch(USERS_API).then((res) => res.json());
+  const response = await fetch(USERS_API);
+  return response.json();
 });
 
 const initialState = {
@@ -16,23 +17,20 @@ const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {},
-  executeReducers: {
-    [getUsers.pending]: (state, action) => {
+  executeReducers: (builder) => {
+    builder.addCase(getUsers.pending, (state, action) => {
       state.loading = true;
       state.error = false;
-      console.log(action);
-    },
-    [getUsers.fulfilled]: (state, action) => {
+    });
+    builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = false;
       state.error = false;
-      console.log(action);
       state.users = action.payload;
-    },
-    [getUsers.rejected]: (state, action) => {
+    });
+    builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = false;
       state.error = action;
-      console.log(action);
-    },
+    });
   },
 });
 

@@ -21,7 +21,6 @@ const AuthContext = ({ children }) => {
         .then((userCredential) => {
           const userInformation = userCredential.user;
           setUser(userInformation);
-          console.log(userCredential);
           toast.success(` You are logged in as ${userCredential.email} ✅`);
           setIsLoading(false);
         })
@@ -51,10 +50,8 @@ const AuthContext = ({ children }) => {
           setUser(userInformation);
           toast.success(`You are logged in as ${userCredential.email} ✅`);
           setIsLoading(false);
-          console.log(userCredential.email);
         })
         .catch((error) => {
-          console.log(error.message);
           const errorObject = error.message.split("(auth/");
           const errorText = errorObject[1].substring(
             0,

@@ -8,7 +8,6 @@ import "../styles/Topbar.css";
 import { memo } from "react";
 
 function Topbar({ user }) {
-  console.log(user?.email, "email ==== top bar ====");
 
   return (
     <Navbar collapseOnSelect expand="lg" className="topbar_navbar">
