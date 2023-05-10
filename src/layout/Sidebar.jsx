@@ -50,7 +50,7 @@ const Sidebar = () => {
             </div>
             {/* //TODO : USER SHOULDNT SEE ADMINS LINK WHILE LOGGED IN AS USER*/}
             <div className="sidebar_link_box">
-              <Link className="sidebar_link" to="/user">
+              <Link className="sidebar_link" to="/users">
                 User
               </Link>
             </div>
